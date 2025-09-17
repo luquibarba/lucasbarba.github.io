@@ -1,0 +1,734 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if category %}{{ category | title }} - {% endif %}Portafolio - Lucas Barba</title>
+  <meta name="description" content="Portafolio personal de Lucas Barba - Desarrollador Frontend especializado en HTML5, CSS3, JavaScript y Python">
+  <meta name="keywords" content="Lucas Barba, desarrollador, frontend, HTML, CSS, JavaScript, Python, portafolio">
+  <link rel="stylesheet" href="{% static 'blog/css/style.css' %}" />
+  <link rel="icon" type="image/x-icon" href="{% static 'blog/logo/favicon.ico' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-header">
+  <a href="#" id="logo-link" aria-label="Ir al inicio">
+    <img src="{% static 'blog/logo/logoanimado.png' %}" class="imagen" alt="Logo animado de Lucas Barba" width="50" height="48">
+  </a>
+</header>
+
+<nav class="dot-navigation" role="navigation" aria-label="Navegación principal">
+  <ul>
+    <li class="nav-dot active" data-section="section1" aria-label="Ir a inicio" role="button" tabindex="0"></li>
+    <li class="nav-dot" data-section="section2" aria-label="Ir a sobre mí" role="button" tabindex="0"></li>
+    <li class="nav-dot" data-section="section3" aria-label="Ir a habilidades" role="button" tabindex="0"></li>
+    <li class="nav-dot" data-section="section4" aria-label="Ir a proyectos" role="button" tabindex="0"></li>
+    <li class="nav-dot" data-section="section5" aria-label="Ir a blog" role="button" tabindex="0"></li>
+  </ul>
+</nav>
+
+<div class="main-content-wrapper">
+  <!-- SECCIÓN 1: INICIO -->
+  <section id="section1" class="content-section active">
+    <div style="display: flex; width: 100%; justify-content: space-between; align-items: center; padding: 0 5%; min-height: 100vh;">
+      <article style="flex: 1; padding-left: 45px;">
+        <div class="typed-text-container">
+          <span id="typed-text"></span>
+        </div>
+      </article>
+      <aside class="side" style="flex: 0 0 auto;">
+        <h1>Mi<br>Portafolio</h1>
+        <a href="{% static 'blog/CV - LUCAS EZEQUIEL BARBA.pdf' %}" download class="boton-descarga" aria-label="Descargar CV de Lucas Barba">
+          <i class="fas fa-download"></i> Descargar CV
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: SOBRE MÍ -->
+  <section id="section2" class="content-section">
+    <div class="about-carousel-container">
+      <div class="about-wrapper">
+        <div class="about-item" id="about-slide1">
+          <h2>Sobre Mí</h2>
+          <img src="{% static 'blog/logo/sobremi.jpg' %}" alt="Foto personal de Lucas Barba" loading="lazy">
+          <p>Mi nombre es Lucas Barba, tengo 16 años y soy estudiante en el Instituto Industrial Luis A. Huergo. Me apasiona mucho el gran mundo de la programación y principalmente el desarrollo de front-end. Estoy abierto a propuestas y nuevos desafíos.</p>
+        </div>
+        <div class="about-item" id="about-slide2">
+          <h2>Intereses</h2>
+          <img src="{% static 'blog/logo/personal2.png' %}" alt="Imagen representativa de intereses personales" loading="lazy">
+          <p>Fuera de la programación, soy de Racing, me gusta mucho el fútbol, hacer deporte y soy activo durante la semana. Es fundamental el balance entre el trabajo y el ejercicio para llegar al mejor punto de uno mismo.</p>
+        </div>
+        <div class="about-item" id="about-slide3">
+          <h2>Metas y Aspiraciones</h2>
+          <img src="{% static 'blog/logo/p3.jpg' %}" alt="Imagen representativa de metas y aspiraciones" loading="lazy">
+          <p>Mi objetivo a corto plazo es dominar el desarrollo web front-end y seguir aprendiendo constantemente. Sin embargo considero sumamente importante saber back-end como perfil de programador completo.</p>
+        </div>
+      </div>
+      <div class="about-navigation-buttons">
+        <button id="prevAbout" aria-label="Anterior slide">
+          <i class="fas fa-chevron-left"></i> Anterior
+        </button>
+        <button id="nextAbout" aria-label="Siguiente slide">
+          Siguiente <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="about-dots-navigation">
+        <span class="about-dot active" data-about="about-slide1" aria-label="Ir a slide 1" role="button" tabindex="0"></span>
+        <span class="about-dot" data-about="about-slide2" aria-label="Ir a slide 2" role="button" tabindex="0"></span>
+        <span class="about-dot" data-about="about-slide3" aria-label="Ir a slide 3" role="button" tabindex="0"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: HABILIDADES -->
+  <section id="section3" class="content-section">
+    <h1>Habilidades Técnicas</h1>
+    <div class="container fila-tarjetas">
+      <div class="card tarjeta-python">
+        <div class="imgBx">
+          <img src="{% static 'blog/logo/python.png' %}" alt="Logo de Python" class="img-python" loading="lazy">
+        </div>
+        <div class="contentBx">
+          <h2>Python</h2>
+          <div class="size">
+            <h3>Comprensión<br>Desarrollo<br>Sintaxis Avanzada</h3>
+          </div>
+          <a href="https://github.com/luquibarba/Mis-trabajos/tree/main/PYTHON/" target="_blank" rel="noopener noreferrer" aria-label="Ver proyectos de Python en GitHub">
+            <i class="fab fa-github"></i> Ver Más
+          </a>
+        </div>
+      </div>
+      <div class="card tarjeta-photoshop">
+        <div class="imgBx">
+          <img src="{% static 'blog/logo/ps.png' %}" alt="Logo de Photoshop" class="img-photoshop" loading="lazy">
+        </div>
+        <div class="contentBx">
+          <h2>Photoshop</h2>
+          <div class="size">
+            <h3>Edición de Imágenes<br>Aplicación de Filtros<br>Uso de Máscaras</h3>
+          </div>
+          <a href="https://github.com/luquibarba/Mis-trabajos/tree/main/PHOTOSHOP/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabajos de Photoshop en GitHub">
+            <i class="fab fa-github"></i> Ver Más
+          </a>
+        </div>
+      </div>
+      <div class="card tarjeta-html">
+        <div class="imgBx">
+          <img src="{% static 'blog/logo/html.png' %}" alt="Logo de HTML5" class="img-html" loading="lazy">
+        </div>
+        <div class="contentBx">
+          <h2>HTML5</h2>
+          <div class="size">
+            <h3>Estructura Semántica<br>Accesibilidad<br>Web Standards</h3>
+          </div>
+          <a href="https://github.com/luquibarba/Mis-trabajos/tree/main/HTML%20-%20CSS%20-%20JS/Portfolio%20-%20Lucas%20Ezequiel%20Barba/" target="_blank" rel="noopener noreferrer" aria-label="Ver proyectos HTML en GitHub">
+            <i class="fab fa-github"></i> Ver Más
+          </a>
+        </div>
+      </div>
+      <div class="card tarjeta-css">
+        <div class="imgBx">
+          <img src="{% static 'blog/logo/css.png' %}" alt="Logo de CSS3" class="img-css" loading="lazy">
+        </div>
+        <div class="contentBx">
+          <h2>CSS3</h2>
+          <div class="size">
+            <h3>Flexbox & Grid<br>Animaciones<br>Responsive Design</h3>
+          </div>
+          <a href="https://github.com/luquibarba/Mis-trabajos/tree/main/HTML%20-%20CSS%20-%20JS/" target="_blank" rel="noopener noreferrer" aria-label="Ver proyectos CSS en GitHub">
+            <i class="fab fa-github"></i> Ver Más
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: PROYECTOS -->
+  <section id="section4" class="content-section">
+    <h1>Proyectos Destacados</h1>
+    <div class="project-carousel-container">
+      <div class="project-wrapper">
+        <div class="project-item" id="project1">
+          <h2>Portafolio Personal</h2>
+          <p>Mi primer proyecto de portafolio web completo desarrollado con HTML5, CSS3 y JavaScript vanilla. Incluye diseño responsive, animaciones fluidas y navegación intuitiva.</p>
+          <a href="https://github.com/luquibarba/Mis-trabajos/tree/main/HTML%20-%20CSS%20-%20JS/Portfolio%20-%20Lucas%20Ezequiel%20Barba/" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de portafolio en GitHub">
+            <i class="fab fa-github"></i> Ver Proyecto
+          </a>
+        </div>
+        <div class="project-item" id="project2">
+          <h2>Space Invaders</h2>
+          <img src="{% static 'blog/logo/proyecto2.png' %}" alt="Captura del juego Space Invaders" loading="lazy" style="max-width: 400px; border-radius: 10px; margin: 20px 0;">
+          <p>Recreación moderna del clásico juego arcade desarrollado en Python con Pygame. Incluye sistema de puntuación, niveles progresivos y efectos visuales.</p>
+          <a href="https://github.com/luquibarba/Mis-trabajos/tree/main/PYTHON/LB_SpaceInvaders/" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto Space Invaders en GitHub">
+            <i class="fab fa-github"></i> Ver Proyecto
+          </a>
+        </div>
+        <div class="project-item" id="project3">
+          <h2>Virtual Pet</h2>
+          <img src="{% static 'blog/logo/proyecto3.png' %}" alt="Captura del juego Virtual Pet" loading="lazy" style="max-width: 400px; border-radius: 10px; margin: 20px 0;">
+          <p>Simulador de mascota virtual donde puedes alimentar, jugar y personalizar a tu "PUU". Desarrollado en Python con interfaz gráfica y sistema de guardado.</p>
+          <a href="https://github.com/luquibarba/Mis-trabajos/tree/main/PYTHON/virtual%20pet/" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto Virtual Pet en GitHub">
+            <i class="fab fa-github"></i> Ver Proyecto
+          </a>
+        </div>
+      </div>
+      
+      <div class="project-navigation-buttons">
+        <button id="prevProject" aria-label="Proyecto anterior">
+          <i class="fas fa-chevron-left"></i> Anterior
+        </button>
+        <button id="nextProject" aria-label="Proyecto siguiente">
+          Siguiente <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="project-dots-navigation">
+        <span class="project-dot active" aria-label="Ir a proyecto 1" role="button" tabindex="0"></span>
+        <span class="project-dot" aria-label="Ir a proyecto 2" role="button" tabindex="0"></span>
+        <span class="project-dot" aria-label="Ir a proyecto 3" role="button" tabindex="0"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: BLOG -->
+  <section id="section5" class="content-section">
+    <div class="blog-container">
+      {% if category %}
+        <h1>Posts en: {{ category | title }}</h1>
+      {% else %}
+        <h1>Mi Blog Personal</h1>
+      {% endif %}
+
+      <!-- Barra de búsqueda -->
+      <div class="blog-search-container">
+        <input type="text" id="blog-search" placeholder="Buscar posts por título, contenido o categoría...">
+        <i class="fas fa-search search-icon"></i>
+        <div id="search-results"></div>
+      </div>
+
+      <!-- Estadísticas del blog -->
+      {% if total_posts %}
+      <div class="blog-stats">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <i class="fas fa-newspaper"></i>
+            <span class="stat-number">{{ total_posts }}</span>
+            <span class="stat-label">Posts</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-eye"></i>
+            <span class="stat-number">{{ total_views|default:0 }}</span>
+            <span class="stat-label">Visualizaciones</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-tags"></i>
+            <span class="stat-number">{{ categories.count }}</span>
+            <span class="stat-label">Categorías</span>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Posts destacados -->
+      {% if featured_posts %}
+      <div class="featured-posts-section">
+        <h2><i class="fas fa-star"></i> Posts Destacados</h2>
+        <div class="featured-posts-grid">
+          {% for post in featured_posts %}
+          <div class="featured-post-card" data-post-id="{{ post.pk }}">
+            {% if post.image %}
+              <img src="{{ post.image.url }}" alt="{{ post.title }}" loading="lazy">
+            {% endif %}
+            <div class="featured-post-content">
+              <h3>{{ post.title }}</h3>
+              <div class="featured-post-meta">
+                <span><i class="fas fa-eye"></i> {{ post.views|default:0 }}</span>
+                <span><i class="fas fa-thumbs-up"></i> {{ post.likes|default:0 }}</span>
+                <span><i class="fas fa-clock"></i> {{ post.get_reading_time }} min</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Filtros de categorías -->
+      <div class="blog-categories" role="tablist" aria-label="Filtros de categorías del blog">
+        <a href="#" class="category-chip active" data-filter="all" role="tab" aria-selected="true" tabindex="0">
+          <i class="fas fa-globe"></i>
+          <span>Todos</span>
+        </a>
+        {% for cat in categories %}
+          <a href="#" class="category-chip" data-filter="{{ cat.name|slugify }}" role="tab" aria-selected="false" tabindex="0" style="--category-color: {{ cat.color }};">
+            <i class="{{ cat.icon }}"></i>
+            <span>{{ cat.name }}</span>
+          </a>
+        {% endfor %}
+      </div>
+
+      <!-- Grid de posts -->
+      <div class="blog-grid" role="main" aria-label="Lista de artículos del blog">
+        {% for post in posts %}
+        <article class="blog-card" 
+                 data-post-id="{{ post.pk }}" 
+                 data-categories="{% for category in post.categories.all %}{{ category.name|slugify }} {% endfor %}" 
+                 tabindex="0" 
+                 role="button" 
+                 aria-label="Leer artículo: {{ post.title }}">
+          
+          <!-- Badge destacado -->
+          {% if post.featured %}
+          <div class="featured-badge">
+            <i class="fas fa-star"></i> Destacado
+          </div>
+          {% endif %}
+          
+          <!-- Imagen del post -->
+          {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog-card-image" loading="lazy">
+          {% else %}
+            <img src="https://placehold.co/600x400/3b2342/d6d6ad?text={{post.title|slugify}}" alt="Imagen no disponible para {{ post.title }}" class="blog-card-image" loading="lazy">
+          {% endif %}
+          
+          <div class="blog-card-content">
+            <!-- Categorías del post -->
+            <div class="post-categories">
+              {% for category in post.categories.all %}
+
+                  <i class="{{ category.icon }}"></i>
+                  {{ category.name }}
+                </span>
+              {% endfor %}
+            </div>
+            
+            <!-- Título y excerpt -->
+            <h2 class="blog-card-title">{{ post.title }}</h2>
+            <p class="blog-card-excerpt">{{ post.body|truncatewords:20 }}</p>
+            
+            <!-- Meta información -->
+            <div class="blog-card-meta">
+              <div class="meta-row">
+                <span class="meta-date">
+                  <i class="fas fa-calendar"></i>
+                  {{ post.created_on|date:"d M Y" }}
+                </span>
+                <span class="meta-reading-time">
+                  <i class="fas fa-clock"></i>
+                  {{ post.get_reading_time }} min
+                </span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-views">
+                  <i class="fas fa-eye"></i>
+                  {{ post.views|default:0 }}
+                </span>
+                <span class="meta-likes">
+                  <i class="fas fa-thumbs-up"></i>
+                  {{ post.likes|default:0 }}
+                </span>
+                <span class="meta-engagement">
+                  <i class="fas fa-chart-line"></i>
+                  {{ post.get_engagement_ratio }}%
+                </span>
+              </div>
+            </div>
+            
+            <!-- Botón de leer más -->
+            <span class="blog-card-link" role="button">
+              <i class="fas fa-book-open"></i> Leer Más
+            </span>
+          </div>
+        </article>
+        {% empty %}
+          <div class="no-posts">
+            <i class="fas fa-search"></i>
+            <h3>No hay publicaciones</h3>
+            <p>{% if category %}No se encontraron posts en la categoría "{{ category }}".{% else %}Aún no hay publicaciones disponibles.{% endif %}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <h1 style="letter-spacing: 5px;">Lucas</h1>
+  <h1 style="margin-bottom: 20px;">Barba</h1>
+  <div class="linea-blanca"></div>
+  <div>
+    <h4>estudiante - 4to año I.I.L.A.H</h4>
+    <h4>desarrollador frontend</h4>
+    <h4>Buenos Aires, Argentina</h4>
+  </div>
+</footer>
+
+<!-- REDES SOCIALES -->
+<div class="social-wrapper">
+  <div class="wrapper">
+    <ul role="list" aria-label="Redes sociales">
+      <li class="facebook" role="listitem">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Facebook">
+          <i class="fab fa-facebook-f fa-2x"></i>
+        </a>
+      </li>
+      <li class="twitter" role="listitem">
+        <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Twitter">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+      </li>
+      <li class="instagram" role="listitem">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Instagram">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+      </li>
+      <li class="google" role="listitem">
+        <a href="#contactModal" aria-label="Abrir formulario de contacto">
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
+      </li>
+      <li class="whatsapp" role="listitem">
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+          <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- MODAL DE CONTACTO -->
+<div id="contactModal" class="modal-backdrop" role="dialog" aria-labelledby="contact-modal-title" aria-hidden="true">
+  <div class="modal-content contact-modal-content">
+    <span class="close-button" aria-label="Cerrar modal">&times;</span>
+    <h2 id="contact-modal-title">
+      <i class="fas fa-envelope"></i> Contáctame
+    </h2>
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="contact-name">
+          <i class="fas fa-user"></i> Nombre:
+        </label>
+        <input type="text" id="contact-name" name="name" required placeholder="Tu nombre completo" aria-describedby="name-error">
+        <div id="name-error" class="error-message" aria-live="polite"></div>
+      </div>
+      <div class="form-group">
+        <label for="contact-email">
+          <i class="fas fa-envelope"></i> Email:
+        </label>
+        <input type="email" id="contact-email" name="email" required placeholder="tu@email.com" aria-describedby="email-error">
+        <div id="email-error" class="error-message" aria-live="polite"></div>
+      </div>
+      <div class="form-group">
+        <label for="contact-message">
+          <i class="fas fa-comment"></i> Mensaje:
+        </label>
+        <textarea id="contact-message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..." aria-describedby="message-error"></textarea>
+        <div id="message-error" class="error-message" aria-live="polite"></div>
+      </div>
+      <button type="submit" class="submit-button">
+        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL DE POSTS -->
+<div id="postModal" class="modal-backdrop" role="dialog" aria-labelledby="post-modal-title" aria-hidden="true">
+  <div class="modal-content post-modal-content">
+    <span class="close-button" aria-label="Cerrar modal">&times;</span>
+    <div class="post-modal-body">
+      <h2 id="modal-post-title"></h2>
+      <div id="modal-post-meta"></div>
+      <div id="modal-post-body"></div>
+      <div class="comments-section-container">
+        <button id="toggle-comments-btn" class="toggle-comments-btn" aria-expanded="false" aria-controls="comments-wrapper">
+          <i class="fas fa-comments"></i> Ver Comentarios
+        </button>
+        <div id="comments-wrapper" class="comments-wrapper" aria-hidden="true">
+          <div id="modal-post-comments"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="{% static 'blog/js/script.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Typed.js para el texto animado
+    if (document.querySelector("#typed-text") && typeof Typed !== 'undefined') {
+      new Typed("#typed-text", {
+        strings: ["Bienvenido", "Welcome", "Bienvenue", "Willkommen", "Benvenuto", "Bem-vindo", "Aloha", "欢迎"],
+        typeSpeed: 25,
+        backSpeed: 40,
+        backDelay: 2000,
+        startDelay: 500,
+        loop: true,
+        smartBackspace: true,
+        showCursor: true,
+        cursorChar: '|',
+        fadeOut: true,
+        fadeOutDelay: 500
+      });
+    }
+
+    // Respeto por usuarios con preferencias de movimiento reducido
+    const isPreferredReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (isPreferredReducedMotion) {
+      document.documentElement.style.setProperty('--transition', 'none');
+      document.documentElement.style.setProperty('--transition-fast', 'none');
+    }
+
+    // Marcar como cargado
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    // Hacer clickeables las tarjetas destacadas
+    document.querySelectorAll('.featured-post-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const postId = this.dataset.postId;
+        const targetCard = document.querySelector(`[data-post-id="${postId}"].blog-card`);
+        if (targetCard) {
+          const readMoreBtn = targetCard.querySelector('.blog-card-link');
+          if (readMoreBtn) {
+            readMoreBtn.click();
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Estilos adicionales específicos para las nuevas funcionalidades */
+  .blog-stats {
+    background: var(--glass-bg);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 30px auto;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    max-width: 600px;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 5px;
+  }
+  
+  .stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .featured-posts-section {
+    margin: 40px 0;
+  }
+  
+  .featured-posts-section h2 {
+    color: var(--accent-color);
+    font-family: 'Horizon', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .featured-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .featured-post-card {
+    background: var(--glass-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    position: relative;
+  }
+  
+  .featured-post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+  }
+  
+  .featured-post-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+  }
+  
+  .featured-post-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .featured-post-content {
+    padding: 20px;
+  }
+  
+  .featured-post-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+  }
+  
+  .featured-post-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  
+  .featured-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  }
+  
+  .post-categories {
+    margin-bottom: 15px;
+  }
+  
+  .category-mini-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    color: white;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .blog-card-meta {
+    margin: 15px 0;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .meta-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .meta-date, .meta-reading-time, .meta-views, .meta-likes, .meta-engagement {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  
+  .meta-likes {
+    color: var(--success-color);
+  }
+  
+  .meta-engagement {
+    color: var(--accent-color);
+  }
+  
+  .no-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+  }
+  
+  .no-posts i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0.5;
+  }
+  
+  .no-posts h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+  }
+  
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .featured-posts-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .meta-row {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .meta-row > * {
+      justify-content: flex-start;
+    }
+  }
+</style>
+
+</body>
+</html>
